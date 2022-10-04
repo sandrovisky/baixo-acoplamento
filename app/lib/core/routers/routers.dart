@@ -1,10 +1,12 @@
+import 'package:app/features/category/repository/category_repository.dart';
+import 'package:app/features/category/router/category_router.dart';
 import 'package:flutter/material.dart';
 
 class Routers {
   static String get initialRoute => '/';
   static final Map<String, Widget Function(BuildContext, dynamic)> routes = {
-    '/': (_, args) => Scaffold(
-          appBar: AppBar(title: Text("Roberta, amor da minha vida!")),
+    '/': (_, args) => CategoryRouter(
+          repository: CategoryRepository(),
         ),
   };
 
